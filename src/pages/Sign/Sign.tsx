@@ -1,44 +1,36 @@
-// import { useState } from 'react';
-// import '@/styles/global/Sign.css';
-// import RightImages from '../../components/Auth/RightImages.jsx';
-// import SignInSignUp from './SignInSignUp.jsx';
-// import SvgCircle from '../../components/SvgCircle.jsx';
+import '@/styles/global/Sign.css';
+import RightImages from '../../components/Auth/RightImages.jsx';
+import SignInSignUp from './SignInSignUp.jsx';
+import SvgCircle from '../../components/SvgCircle.jsx';
 import { useAppSelector } from '@/hooks/useAppSelector';
 
 function Sign() {
   const isSign = useAppSelector((state) => state.sign.isSign);
   console.log(isSign);
-  // const [signCheck, setSignCheck] = useState('in');
-  // function handleSignCheck(signStatus: string): void {
-  //   setSignCheck(value);
-  // }
 
-  // const slideCircleClass = 'up';
+  const slideCircleClass = 'up';
 
   return (
     <>
-      {/* <main>
+      <main>
         <div id="sign">
-          {(signCheck === 'in' && (
-            <SignInSignUp page={signCheck} handleSignCheck={handleSignCheck} />
+          {(isSign === 'in' && (
+            <SignInSignUp page={isSign} handleSignCheck={handleSignCheck} />
           )) ||
-            (signCheck === 'up' && (
-              <SignInSignUp
-                page={signCheck}
-                handleSignCheck={handleSignCheck}
-              />
+            (isSign === 'up' && (
+              <SignInSignUp page={isSign} handleSignCheck={handleSignCheck} />
             )) ||
             (signCheck === 'reset' && (
-              <SvgCircle page={signCheck} handleSignCheck={handleSignCheck} />
+              <SvgCircle page={isSign} handleSignCheck={handleSignCheck} />
             ))}
         </div>
 
-        {signCheck === 'reset' ? (
-          <RightImages page={signCheck} svgClass={slideCircleClass} />
+        {isSign === 'reset' ? (
+          <RightImages page={isSign} svgClass={slideCircleClass} />
         ) : (
-          <RightImages page={signCheck} />
+          <RightImages page={isSign} />
         )}
-      </main> */}
+      </main>
     </>
   );
 }
